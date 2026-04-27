@@ -67,3 +67,65 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+uv.lock
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Models and data (likely large files)
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pkl
+*.h5
+models/
+data/raw/
+data/labelled/
+
+# Audio files (recorded sessions)
+*.wav
+*.mp3
+*.flac
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
