@@ -23,7 +23,7 @@ esp_err_t mic_init(void)
         ),
         .gpio_cfg = {
             .mclk   = I2S_GPIO_UNUSED,
-            .bclk   = MIC_I2S_DATA_PIN,
+            .bclk   = MIC_I2S_BCK_PIN,
             .ws     = MIC_I2S_WS_PIN,
             .dout   = I2S_GPIO_UNUSED,
             .din    = MIC_I2S_DATA_PIN,
