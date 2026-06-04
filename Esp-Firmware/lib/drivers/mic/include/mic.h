@@ -1,16 +1,6 @@
 #ifndef MIC_H
 #define MIC_H
 
-#include "driver/i2s_std.h"
-#include "driver/gpio.h"
-#include "freertos/FreeRTOS.h"
-
-#include "board.h"
-#include "app_config.h"
-
-#ifdef DEBUG
-    #include "esp_log.h"
-#endif
 
 //function definitions
 esp_err_t mic_init(void);

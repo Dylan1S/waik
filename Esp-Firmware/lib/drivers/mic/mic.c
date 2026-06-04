@@ -1,5 +1,16 @@
 #include "mic.h"
 
+#include "driver/i2s_std.h"
+#include "driver/gpio.h"
+#include "freertos/FreeRTOS.h"
+
+#include "board.h"
+#include "app_config.h"
+
+#ifdef DEBUG
+    #include "esp_log.h"
+#endif
+
 static i2s_chan_handle_t rx_handle;
 static const char *MIC_TAG = "Microphone:";
 
