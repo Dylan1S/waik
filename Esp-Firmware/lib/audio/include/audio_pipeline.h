@@ -2,6 +2,7 @@
 #define _AUDIO_PIPE_H_
 
 
+#include "freertos/FreeRTOS.h"
 
 class AudioPipeline
 {
