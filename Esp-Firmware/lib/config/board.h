@@ -11,9 +11,9 @@
 
 
 //These are the pin definitions for the MAX98357A amp
-#define SPKR_I2S_BCK_PIN    GPIO_NUM_38
-#define SPKR_I2S_LRC_PIN    GPIO_NUM_38
-#define SPKR_I2S_DATA_PIN   GPIO_NUM_1
+#define SPK_I2S_BCK_PIN    GPIO_NUM_38
+#define SPK_I2S_LRC_PIN    GPIO_NUM_38
+#define SPK_I2S_DATA_PIN   GPIO_NUM_1
 
 
 #endif
