@@ -1,4 +1,4 @@
-#include "mic/include/mic.h"
+#include "mic.h"
 
 static i2s_chan_handle_t rx_handle;
 static const char *MIC_TAG = "Microphone:";
@@ -41,23 +41,29 @@ esp_err_t mic_init(void)
         ESP_LOGI(MIC_TAG, "I2S initialized - BCK: %d, WS: %d, DIN %D",
                 MIC_I2S_BCK_PIN, MIC_I2S_WS_PIN, MIC_I2S_DATA_PIN);
     #endif
+    return ESP_OK;
 }
 
 /*Enable the mic's I2S Channel. Mic must be initialized*/
 esp_err_t mic_enable(void)
 {
     ESP_ERROR_CHECK(i2s_channel_enable(rx_handle));
+    return ESP_OK;
 }
 /*Disable the mic but don't delete it's I2S Channel*/
 esp_err_t mic_disable(void)
 {
     ESP_ERROR_CHECK(i2s_channel_disable(rx_handle));
+
+    return ESP_OK;
 }
 
 /*Delete the mic's I2S Channel*/
 esp_err_t mic_deinit(void)
 {
-    ESP_ERR_CHECK(i2s_del_channel(rx_handle));
+    ESP_ERROR_CHECK(i2s_del_channel(rx_handle));
+
+    return ESP_OK;
 }
 
 esp_err_t mic_read(int16_t *buf, size_t num_samples, size_t *bytes_read, uint32_t timeout_ms)
@@ -75,5 +81,7 @@ esp_err_t mic_read(int16_t *buf, size_t num_samples, size_t *bytes_read, uint32_
             ESP_LOGW(MIC_TAG, "I2S read failed or timed out: %s", esp_err_to_name(ret));
         #endif
     }
+
+    return ESP_OK;
 }
 
