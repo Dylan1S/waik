@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.16.0)
 
-set(EXTRA_COMPONENT_DIRS "lib/config" "lib/drivers/mic" "lib/drivers/speaker")
+set(EXTRA_COMPONENT_DIRS
+    "lib/config"
+    "lib/drivers/mic"
+    "lib/drivers/speaker"
+    "lib/audio")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(Esp-Firmware)
