@@ -1,6 +1,7 @@
 #ifndef SPK_H
 #define SPK_H
 
+#include "esp_err.h"
 //function definitions
 esp_err_t spk_init(void);
 esp_err_t spk_enable(void);

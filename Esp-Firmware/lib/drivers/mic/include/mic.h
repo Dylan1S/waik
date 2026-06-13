@@ -1,6 +1,8 @@
 #ifndef MIC_H
 #define MIC_H
 
+#include "esp_err.h"
+
 
 //function definitions
 esp_err_t mic_init(void);
