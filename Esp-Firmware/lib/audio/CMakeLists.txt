@@ -1,5 +1,5 @@
 idf_component_register(
     SRCS "audio_pipeline.cpp"
     INCLUDE_DIRS "include"
-    REQUIRES mic speaker config esp-sr
+    REQUIRES mic speaker config esp-sr espressif__led_strip
 )

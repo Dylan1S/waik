@@ -2,3 +2,4 @@ dependencies:
   idf: ">=5.0.0"
   espressif/esp-sr:
     version: ">=2.0.0"
+  espressif/led_strip: ">=3.0.0"
