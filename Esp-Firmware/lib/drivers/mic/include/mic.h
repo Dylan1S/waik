@@ -2,7 +2,12 @@
 #define MIC_H
 
 #include "esp_err.h"
+#include <stdint.h>
+#include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 //function definitions
 esp_err_t mic_init(void);
@@ -11,5 +16,7 @@ esp_err_t mic_read(int16_t *buf, size_t num_samples, size_t *bytes_read, uint32_
 esp_err_t mic_disable(void);
 esp_err_t mic_deinit(void);
 
-
+#ifdef __cplusplus
+}
+#endif
 #endif
