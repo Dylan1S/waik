@@ -74,7 +74,7 @@ esp_err_t mic_deinit(void)
 
     return ESP_OK;
 }
-
+/*Read data from the microphone into buffer*/
 esp_err_t mic_read(int16_t *buf, size_t num_samples, size_t* bytes_read, uint32_t timeout_ms)
 {
     size_t bytes_to_read = num_samples * sizeof(int16_t);
