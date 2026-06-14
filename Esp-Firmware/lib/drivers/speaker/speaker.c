@@ -7,9 +7,7 @@
 #include "board.h"
 #include "app_config.h"
 
-#ifdef DEBUG
-    #include "esp_log.h"
-#endif 
+#include "esp_log.h"
 
 
 static i2s_chan_handle_t tx_handle;
@@ -44,10 +42,11 @@ esp_err_t spk_init(void)
     };
 
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &std_cfg));
-    #ifdef DEBUG
-        ESP_LOGI(SPK_TAG, "I2S initialized - BCK: %d, WS: %d, DOUT: %d",
-        SPK_I2S_BCK_PIN, SPK_I2S_LRC_PIN, SPK_I2S_DATA_PIN);
-    #endif
+    
+    ESP_LOGI(
+        SPK_TAG, "I2S initialized - BCK: %d, WS: %d, DOUT: %d",
+        SPK_I2S_BCK_PIN, SPK_I2S_LRC_PIN, SPK_I2S_DATA_PIN
+    );
 
     return ESP_OK;
 }

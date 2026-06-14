@@ -7,9 +7,7 @@
 #include "board.h"
 #include "app_config.h"
 
-#ifdef DEBUG
-    #include "esp_log.h"
-#endif
+#include "esp_log.h"
 
 static i2s_chan_handle_t rx_handle;
 static const char *MIC_TAG = "Microphone:";
@@ -48,10 +46,10 @@ esp_err_t mic_init(void)
 
     //initializing I2S channel
     ESP_ERROR_CHECK(i2s_channel_init_std_mode(rx_handle, &std_cfg));
-    #ifdef DEBUG
-        ESP_LOGI(MIC_TAG, "I2S initialized - BCK: %d, WS: %d, DIN %D",
-                MIC_I2S_BCK_PIN, MIC_I2S_WS_PIN, MIC_I2S_DATA_PIN);
-    #endif
+    ESP_LOGI(
+        MIC_TAG, "I2S initialized - BCK: %d, WS: %d, DIN %D",
+        MIC_I2S_BCK_PIN, MIC_I2S_WS_PIN, MIC_I2S_DATA_PIN
+    );
     return ESP_OK;
 }
 
